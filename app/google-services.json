@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "841499711529",
+    "project_id": "report-it-86853",
+    "storage_bucket": "report-it-86853.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841499711529:android:4dad5fde43be8a6b802438",
+        "android_client_info": {
+          "package_name": "com.mihneacristian.report_it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841499711529-0t099hhmsbp52iflgabcdnksh6pkjdro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mihneacristian.report_it",
+            "certificate_hash": "d0cfb556b1bbbc3cbeb29fc67d3fcaafbcda71cf"
+          }
+        },
+        {
+          "client_id": "841499711529-j3d2vh9vsekb044glch3mjfu15v69dsj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGbbt1pAigjIO5JpH9rYwxAuOnPiTPzjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841499711529-j3d2vh9vsekb044glch3mjfu15v69dsj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

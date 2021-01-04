@@ -32,6 +32,7 @@ import com.mapbox.mapboxsdk.utils.BitmapUtils;
 import com.mihneacristian.report_it.R;
 import com.mihneacristian.report_it.data.dto.IssuesDTO;
 import com.mihneacristian.report_it.data.remote.ApplicationAPI;
+import com.mihneacristian.report_it.domain.entity.IssuesEntity;
 
 import java.util.List;
 
@@ -46,8 +47,8 @@ public class MapFragment extends Fragment {
     private MapView mapView;
     private Icon customIcon;
     final ApplicationAPI applicationAPI = ApplicationAPI.createAPI();
-    Call<List<IssuesDTO>> call = applicationAPI.getIssues();
-    FloatingActionButton fab;
+    private Call<List<IssuesDTO>> call = applicationAPI.getIssues();
+    private FloatingActionButton fab;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,7 +65,7 @@ public class MapFragment extends Fragment {
                     public void onStyleLoaded(@NonNull Style style) {
 
                         UiSettings uiSettings = mapboxMap.getUiSettings();
-                        uiSettings.areAllGesturesEnabled();
+                        uiSettings.setZoomGesturesEnabled(true);
                     }
                 });
 
@@ -121,7 +122,7 @@ public class MapFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<List<IssuesDTO>> call, Throwable t) {
-                        //TODO
+                        t.printStackTrace();
                     }
                 });
 

@@ -6,23 +6,23 @@
         android:icon="@drawable/map_icon"
         android:title="Map"
         app:showAsAction="ifRoom"
-        app:cnb_iconColor="#000000" />
+        app:cnb_iconColor="@color/mapboxBlue" />
     <item
         android:id="@+id/issues"
         android:icon="@drawable/warning_icon"
         android:title="Reported Issues"
         app:showAsAction="ifRoom"
-        app:cnb_iconColor="#000000" />
+        app:cnb_iconColor="@color/mapboxBlue" />
     <item
         android:id="@+id/aboutUs"
         android:icon="@drawable/about"
         android:title="About Us"
         app:showAsAction="ifRoom"
-        app:cnb_iconColor="#000000" />
+        app:cnb_iconColor="@color/mapboxBlue" />
     <item
         android:id="@+id/contactUs"
         android:icon="@drawable/contact"
         android:title="Contact"
         app:showAsAction="ifRoom"
-        app:cnb_iconColor="#000000" />
+        app:cnb_iconColor="@color/mapboxBlue" />
 </menu>

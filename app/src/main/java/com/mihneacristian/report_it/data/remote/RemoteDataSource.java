@@ -3,6 +3,7 @@ package com.mihneacristian.report_it.data.remote;
 import android.util.Log;
 
 import com.mihneacristian.report_it.data.dto.IssuesDTO;
+import com.mihneacristian.report_it.domain.entity.IssuesEntity;
 import com.mihneacristian.report_it.domain.repository.IssuesRepository;
 
 import java.util.Collections;

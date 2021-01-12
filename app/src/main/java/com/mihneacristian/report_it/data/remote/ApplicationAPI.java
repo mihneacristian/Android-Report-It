@@ -1,7 +1,6 @@
 package com.mihneacristian.report_it.data.remote;
 
 import com.mihneacristian.report_it.data.dto.IssuesDTO;
-import com.mihneacristian.report_it.domain.entity.IssuesEntity;
 
 import java.util.List;
 

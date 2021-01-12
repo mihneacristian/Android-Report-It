@@ -2,23 +2,23 @@ package com.mihneacristian.report_it.presentation.fragments;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.transition.Slide;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.transition.SlideDistanceProvider;
 import com.mapbox.mapboxsdk.annotations.Icon;
 import com.mapbox.mapboxsdk.annotations.IconFactory;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
@@ -32,8 +32,9 @@ import com.mapbox.mapboxsdk.utils.BitmapUtils;
 import com.mihneacristian.report_it.R;
 import com.mihneacristian.report_it.data.dto.IssuesDTO;
 import com.mihneacristian.report_it.data.remote.ApplicationAPI;
-import com.mihneacristian.report_it.domain.entity.IssuesEntity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -45,6 +46,7 @@ import static com.mapbox.mapboxsdk.Mapbox.getApplicationContext;
 public class MapFragment extends Fragment {
 
     private MapView mapView;
+    private MapboxMap map;
     private Icon customIcon;
     final ApplicationAPI applicationAPI = ApplicationAPI.createAPI();
     private Call<List<IssuesDTO>> call = applicationAPI.getIssues();
@@ -60,6 +62,9 @@ public class MapFragment extends Fragment {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull MapboxMap mapboxMap) {
+
+                map = mapboxMap;
+
                 mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
@@ -134,27 +139,7 @@ public class MapFragment extends Fragment {
                         Toast toast = Toast.makeText(getApplicationContext(), R.string.place_location, Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
-
-                        mapboxMap.addOnMapClickListener(new MapboxMap.OnMapClickListener() {
-                            @Override
-                            public boolean onMapClick(@NonNull LatLng point) {
-
-                                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                                        MapFragment.this.getContext(),
-                                        R.style.BottomSheetDialog
-                                );
-
-                                View bottomSheetView = LayoutInflater.from(getApplicationContext())
-                                        .inflate(R.layout.layout_bottom_sheet,
-                                                (LinearLayout) view.findViewById(R.id.bottomSheetContainer));
-
-                                bottomSheetDialog.setContentView(bottomSheetView);
-                                bottomSheetDialog.show();
-
-                                mapboxMap.removeOnMapClickListener(this);
-                                return true;
-                            }
-                        });
+                        addIssue(view);
                     }
                 });
 
@@ -162,6 +147,47 @@ public class MapFragment extends Fragment {
         });
 
         return view;
+    }
+
+    public void addIssue(View view) {
+
+        map.addOnMapClickListener(new MapboxMap.OnMapClickListener() {
+            @Override
+            public boolean onMapClick(@NonNull LatLng point) {
+
+                List<String> types = Arrays.asList(getResources().getStringArray(R.array.types));
+                List<String> severity = Arrays.asList(getResources().getStringArray(R.array.severity));
+
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        MapFragment.this.getContext(),
+                        R.style.BottomSheetDialog
+                );
+
+                View bottomSheetView = LayoutInflater.from(getApplicationContext())
+                        .inflate(R.layout.layout_bottom_sheet,
+                                (LinearLayout) view.findViewById(R.id.bottomSheetContainer));
+
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+
+                ArrayAdapter<String> adapter;
+
+                Spinner spinnerType = bottomSheetView.findViewById(R.id.type);
+                adapter = new ArrayAdapter<String>(getApplicationContext(),
+                        android.R.layout.simple_spinner_item, types);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                spinnerType.setAdapter(adapter);
+
+                Spinner spinnerSeverity = bottomSheetView.findViewById(R.id.severity);
+                adapter = new ArrayAdapter<String>(getApplicationContext(),
+                        android.R.layout.simple_spinner_item, severity);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                spinnerSeverity.setAdapter(adapter);
+
+                map.removeOnMapClickListener(this);
+                return true;
+            }
+        });
     }
 
     @Override

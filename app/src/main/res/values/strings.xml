@@ -25,6 +25,10 @@
 
 
     <string name="place_location">Click to place location on map</string>
+    <string name="map">Map</string>
+    <string name="reported_issues">Reported Issues</string>
+    <string name="about_us">About Us</string>
+    <string name="contact">Contact</string>
 
     <string-array name="types">
         <item>Litter</item>

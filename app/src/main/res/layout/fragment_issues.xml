@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <import type="android.view.View"></import>
+
         <variable
             name="issuesEntityFragment"
             type="com.mihneacristian.report_it.domain.entity.IssuesEntity" />
@@ -17,13 +18,20 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
 
+        <ImageView
+            android:id="@+id/issueImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:photoURL="@{issuesEntityFragment.photoURL}"></ImageView>
 
-            <ImageView
-                android:id="@+id/issueImage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/berlin"
-                android:scaleType="fitXY"></ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:text="@{issuesEntityFragment.issueTitle}"
+            android:textColor="@color/mapboxBlue"
+            android:textSize="24sp"></TextView>
 
     </androidx.cardview.widget.CardView>
 

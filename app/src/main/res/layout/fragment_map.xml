@@ -28,7 +28,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/mapboxBlue"
             android:contentDescription="@string/addLocation"
             android:src="@drawable/ic_plus_sign"
             mapbox:fabSize="normal"

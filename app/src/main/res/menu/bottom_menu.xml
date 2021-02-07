@@ -5,24 +5,20 @@
         android:id="@+id/map"
         android:icon="@drawable/map_icon"
         android:title="@string/map"
-        app:showAsAction="ifRoom"
-        app:cnb_iconColor="@color/mapboxBlue" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/issues"
         android:icon="@drawable/warning_icon"
         android:title="@string/reported_issues"
-        app:showAsAction="ifRoom"
-        app:cnb_iconColor="@color/mapboxBlue" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/aboutUs"
         android:icon="@drawable/about"
         android:title="@string/about_us"
-        app:showAsAction="ifRoom"
-        app:cnb_iconColor="@color/mapboxBlue" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/contactUs"
         android:icon="@drawable/contact"
         android:title="@string/contact"
-        app:showAsAction="ifRoom"
-        app:cnb_iconColor="@color/mapboxBlue" />
+        app:showAsAction="ifRoom" />
 </menu>

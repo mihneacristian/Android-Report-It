@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "841499711529",
+    "firebase_url": "https://report-it-86853-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "report-it-86853",
     "storage_bucket": "report-it-86853.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "841499711529-0t099hhmsbp52iflgabcdnksh6pkjdro.apps.googleusercontent.com",
+          "client_id": "841499711529-ou98stoq14ghbsrfbpdqvrmr21acd04d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.mihneacristian.report_it",
-            "certificate_hash": "d0cfb556b1bbbc3cbeb29fc67d3fcaafbcda71cf"
+            "certificate_hash": "9a3dfb22d151771b0d5af69fa5b6462117aa8cbc"
           }
         },
         {

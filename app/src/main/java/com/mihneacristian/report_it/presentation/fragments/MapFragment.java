@@ -1,14 +1,14 @@
 package com.mihneacristian.report_it.presentation.fragments;
 
+import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -33,7 +33,6 @@ import com.mihneacristian.report_it.R;
 import com.mihneacristian.report_it.data.dto.IssuesDTO;
 import com.mihneacristian.report_it.data.remote.ApplicationAPI;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -49,8 +48,9 @@ public class MapFragment extends Fragment {
     private MapboxMap map;
     private Icon customIcon;
     final ApplicationAPI applicationAPI = ApplicationAPI.createAPI();
-    private Call<List<IssuesDTO>> call = applicationAPI.getIssues();
+    private final Call<List<IssuesDTO>> call = applicationAPI.getIssues();
     private FloatingActionButton fab;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,16 +63,35 @@ public class MapFragment extends Fragment {
             @Override
             public void onMapReady(@NonNull MapboxMap mapboxMap) {
 
+                int nightModeFlag = getContext().getResources().getConfiguration().uiMode &
+                        Configuration.UI_MODE_NIGHT_MASK;
                 map = mapboxMap;
+                fab = view.findViewById(R.id.fab);
 
-                mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
-                    @Override
-                    public void onStyleLoaded(@NonNull Style style) {
+                switch (nightModeFlag) {
+                    case Configuration.UI_MODE_NIGHT_YES:
+                        mapboxMap.setStyle(Style.DARK, new Style.OnStyleLoaded() {
+                            @Override
+                            public void onStyleLoaded(@NonNull Style style) {
 
-                        UiSettings uiSettings = mapboxMap.getUiSettings();
-                        uiSettings.setZoomGesturesEnabled(true);
-                    }
-                });
+                                UiSettings uiSettings = mapboxMap.getUiSettings();
+                                uiSettings.setZoomGesturesEnabled(true);
+                            }
+                        });
+                        fab.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(), R.color.mapboxGrayLight)));
+                        break;
+                    case Configuration.UI_MODE_NIGHT_NO:
+                        mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
+                            @Override
+                            public void onStyleLoaded(@NonNull Style style) {
+
+                                UiSettings uiSettings = mapboxMap.getUiSettings();
+                                uiSettings.setZoomGesturesEnabled(true);
+                            }
+                        });
+                        fab.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(), R.color.mapboxBlue)));
+                        break;
+                }
 
                 call.clone().enqueue(new Callback<List<IssuesDTO>>() {
                     @Override
@@ -165,7 +184,7 @@ public class MapFragment extends Fragment {
 
                 View bottomSheetView = LayoutInflater.from(getApplicationContext())
                         .inflate(R.layout.layout_bottom_sheet,
-                                (LinearLayout) view.findViewById(R.id.bottomSheetContainer));
+                                view.findViewById(R.id.bottomSheetContainer));
 
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();

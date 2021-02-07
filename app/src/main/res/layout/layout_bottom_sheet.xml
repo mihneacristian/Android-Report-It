@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorSecondaryText"
-                    android:textSize="13sp" />
+                    android:textSize="8sp" />
 
             </LinearLayout>
 
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="@color/colorSecondaryText"
-                    android:textSize="13sp" />
+                    android:textSize="8sp" />
 
             </LinearLayout>
 

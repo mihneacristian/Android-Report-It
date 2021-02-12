@@ -35,7 +35,7 @@ public class FetchRemoteSourceDataTest {
     }
 
     @Test
-    public void fetch_remote_wrong_data_source() {
+    public void fetch_wrong_remote_data_source() {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);

@@ -1,5 +1,6 @@
 package com.mihneacristian.report_it.presentation.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -27,7 +28,6 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.maps.UiSettings;
 import com.mapbox.mapboxsdk.utils.BitmapUtils;
 import com.mihneacristian.report_it.R;
 import com.mihneacristian.report_it.data.dto.IssuesDTO;
@@ -51,7 +51,6 @@ public class MapFragment extends Fragment {
     private final Call<List<IssuesDTO>> call = applicationAPI.getIssues();
     private FloatingActionButton fab;
 
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -70,25 +69,11 @@ public class MapFragment extends Fragment {
 
                 switch (nightModeFlag) {
                     case Configuration.UI_MODE_NIGHT_YES:
-                        mapboxMap.setStyle(Style.DARK, new Style.OnStyleLoaded() {
-                            @Override
-                            public void onStyleLoaded(@NonNull Style style) {
-
-                                UiSettings uiSettings = mapboxMap.getUiSettings();
-                                uiSettings.setZoomGesturesEnabled(true);
-                            }
-                        });
+                        mapboxMap.setStyle(Style.DARK);
                         fab.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(), R.color.mapboxGrayLight)));
                         break;
                     case Configuration.UI_MODE_NIGHT_NO:
-                        mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
-                            @Override
-                            public void onStyleLoaded(@NonNull Style style) {
-
-                                UiSettings uiSettings = mapboxMap.getUiSettings();
-                                uiSettings.setZoomGesturesEnabled(true);
-                            }
-                        });
+                        mapboxMap.setStyle(Style.MAPBOX_STREETS);
                         fab.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(), R.color.mapboxBlue)));
                         break;
                 }
@@ -171,6 +156,7 @@ public class MapFragment extends Fragment {
     public void addIssue(View view) {
 
         map.addOnMapClickListener(new MapboxMap.OnMapClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public boolean onMapClick(@NonNull LatLng point) {
 
@@ -230,6 +216,7 @@ public class MapFragment extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
+        mapView.onStop();
     }
 
     @Override

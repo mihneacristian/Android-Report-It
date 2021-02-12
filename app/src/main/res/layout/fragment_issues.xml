@@ -13,7 +13,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="200dp"
         android:layout_margin="10dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
@@ -30,7 +30,8 @@
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="@{issuesEntityFragment.issueTitle}"
-            android:textColor="@color/mapboxBlue"
+            android:textColor="@color/mapboxWhite"
+            android:textStyle="bold"
             android:textSize="24sp"></TextView>
 
     </androidx.cardview.widget.CardView>

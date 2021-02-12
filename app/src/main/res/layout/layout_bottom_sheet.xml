@@ -120,6 +120,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/addLocation"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -127,6 +128,7 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_button"
         android:text="@string/add_location"
+        android:backgroundTint="@color/mapboxBlue"
         android:textColor="@color/mapboxWhite"
         android:textSize="16sp"></Button>
 </LinearLayout>

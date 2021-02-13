@@ -14,7 +14,7 @@ Android Advanced - Google Atelierul Digital pentru Programatori
 </p>
 <br />
 <p align="center">
-    <img src="https://i.imgur.com/iswRaf5.jpg" width="200" height="400"/>
+    <img src="https://i.imgur.com/VYih8Br.jpg" width="200" height="400"/>
     <img src="https://i.imgur.com/EYge7Ml.png" width="200" height="400"/>
     <img src="https://i.imgur.com/GPtMAC0.png" width="200" height="400"/>
 </p>

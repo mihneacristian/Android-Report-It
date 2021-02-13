@@ -56,4 +56,8 @@
     <string name="author_email">popamihneacristian@gmail.com</string>
     <string name="email_subject">Issues and Suggestions</string>
     <string name="about_us_text">Report It is an app that allows its users to report all kinds of issues, from litter to graffiti and potholes. The app represents the final project for the Android Advanced course (Google Digital Workshop for Programmers).</string>
+    <string name="contact_info1">In order to resolve a complaint regarding the App or to receive further information regarding use of the App, please contact us at:</string>
+    <string name="city">Bucharest, Romania</string>
+    <string name="contact_us">CONTACT US</string>
+
 </resources>

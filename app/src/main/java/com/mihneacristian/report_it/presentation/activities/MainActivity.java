@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private MapFragment mapFragment;
     private IssuesFragment issuesFragment;
     private AboutUsFragment aboutUsFragment;
+    public static final int NOTIFICATION_LAUNCH_CODE = 485;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

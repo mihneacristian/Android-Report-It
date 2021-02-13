@@ -8,14 +8,14 @@ Android Advanced - Google Atelierul Digital pentru Programatori
 - Reviewed: https://github.com/ReksioCroft/PavGame_AndroidAdvanced
 <br />
 <p align="center">
-    <img src="https://i.imgur.com/TGjFLKL.png" width="300" height="600"/>
-    <img src="https://i.imgur.com/N0tiuxR.png" width="300" height="600"/>
-    <img src="https://i.imgur.com/rIjYOux.png" width="300" height="600"/>
+    <img src="https://i.imgur.com/TGjFLKL.png" width="200" height="400"/>
+    <img src="https://i.imgur.com/N0tiuxR.png" width="200" height="400"/>
+    <img src="https://i.imgur.com/rIjYOux.png" width="200" height="400"/>
 </p>
 <br />
 <p align="center">
-    <img src="https://i.imgur.com/iswRaf5.jpg" width="300" height="600"/>
-    <img src="https://i.imgur.com/EYge7Ml.png" width="300" height="600"/>
-    <img src="https://i.imgur.com/GPtMAC0.png" width="300" height="600"/>
+    <img src="https://i.imgur.com/iswRaf5.jpg" width="200" height="400"/>
+    <img src="https://i.imgur.com/EYge7Ml.png" width="200" height="400"/>
+    <img src="https://i.imgur.com/GPtMAC0.png" width="200" height="400"/>
 </p>
 <br />

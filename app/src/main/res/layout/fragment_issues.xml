@@ -26,13 +26,81 @@
             app:photoURL="@{issuesEntityFragment.photoURL}"></ImageView>
 
         <TextView
+            android:id="@+id/issueTitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
             android:text="@{issuesEntityFragment.issueTitle}"
             android:textColor="@color/mapboxWhite"
-            android:textStyle="bold"
-            android:textSize="24sp"></TextView>
+            android:textSize="24sp"
+            android:textStyle="bold"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/dateAdded"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_baseline_date_range_24"></ImageView>
+
+                <TextView
+                    android:id="@+id/issueDateAdded"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@{issuesEntityFragment.dateAdded}"
+                    android:textColor="@color/mapboxWhite"
+                    android:textSize="16sp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24sp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_baseline_location_on_24"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@{Double.toString(issuesEntityFragment.lat)}"
+                    android:textColor="@color/mapboxWhite"
+                    android:textSize="16sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@{Double.toString(issuesEntityFragment.lng)}"
+                    android:textColor="@color/mapboxWhite"
+                    android:textSize="16sp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

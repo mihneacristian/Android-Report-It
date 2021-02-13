@@ -95,11 +95,11 @@ public class MapFragment extends Fragment {
                                     customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
                                     break;
                                 }
-                                case "Litter": {
+                                case "Illegal parking": {
                                     Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
                                             ContextCompat.getDrawable(
                                                     getContext().getApplicationContext(),
-                                                    R.drawable.ic_pin
+                                                    R.drawable.ic_no_parking
                                             )
                                     );
                                     customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
@@ -109,7 +109,97 @@ public class MapFragment extends Fragment {
                                     Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
                                             ContextCompat.getDrawable(
                                                     getContext().getApplicationContext(),
-                                                    R.drawable.mapbox_marker_icon_default
+                                                    R.drawable.ic_paint_spray
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Roadworks": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_road_work
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Litter": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_paper_bin
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Illegal dumping": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_trash
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Street lighting": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_street_light
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Abandoned vehicle": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_crash
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Damaged tree": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_dead_tree
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Fallen tree": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_wind
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Hanging branches": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_branch
+                                            )
+                                    );
+                                    customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);
+                                    break;
+                                }
+                                case "Worn out street sign": {
+                                    Bitmap bitmap = BitmapUtils.getBitmapFromDrawable(
+                                            ContextCompat.getDrawable(
+                                                    getContext().getApplicationContext(),
+                                                    R.drawable.ic_traffic_signal
                                             )
                                     );
                                     customIcon = IconFactory.getInstance(requireContext().getApplicationContext()).fromBitmap(bitmap);

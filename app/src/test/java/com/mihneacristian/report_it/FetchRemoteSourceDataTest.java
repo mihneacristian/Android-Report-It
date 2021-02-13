@@ -31,7 +31,7 @@ public class FetchRemoteSourceDataTest {
                 .create(ApplicationAPI.class);
 
         RemoteDataSource remoteDataSource = new RemoteDataSource(api);
-        assertEquals(4, remoteDataSource.getIssues().size());
+        assertEquals(7, remoteDataSource.getIssues().size());
     }
 
     @Test

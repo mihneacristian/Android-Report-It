@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -50,6 +51,7 @@ public class MapFragment extends Fragment {
     final ApplicationAPI applicationAPI = ApplicationAPI.createAPI();
     private final Call<List<IssuesDTO>> call = applicationAPI.getIssues();
     private FloatingActionButton fab;
+    private Button addLocationButton;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -236,7 +238,6 @@ public class MapFragment extends Fragment {
                         addIssue(view);
                     }
                 });
-
             }
         });
 
@@ -278,6 +279,19 @@ public class MapFragment extends Fragment {
                         android.R.layout.simple_spinner_item, severity);
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
                 spinnerSeverity.setAdapter(adapter);
+
+
+                addLocationButton = bottomSheetView.findViewById(R.id.addLocation);
+                addLocationButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Toast toast = Toast.makeText(getApplicationContext(), "TO BE IMPLEMENTED", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        addIssue(view);
+                    }
+                });
 
                 map.removeOnMapClickListener(this);
                 return true;

@@ -7,6 +7,7 @@ Android Advanced - Google Atelierul Digital pentru Programatori
 - Reviewers: [Octavian-Florin Staicu](https://github.com/ReksioCroft)
 - Reviewed: https://github.com/ReksioCroft/PavGame_AndroidAdvanced
 <br />
+<br />
  🚧 UNDER CONSTRUCTION 🚧
 <br />
 <br />

@@ -6,6 +6,10 @@ Android Advanced - Google Atelierul Digital pentru Programatori
 - Backend: https://console.firebase.google.com/project/report-it-86853/
 - Reviewers: [Octavian-Florin Staicu](https://github.com/ReksioCroft)
 - Reviewed: https://github.com/ReksioCroft/PavGame_AndroidAdvanced
+
+<br />
+# UNDER CONSTRUCTION
+<br />
 <br />
 <p align="center">
     <img src="https://i.imgur.com/TGjFLKL.png" width="200" height="400"/>
